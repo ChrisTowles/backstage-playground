@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name | dump }}
+  description: ${{ values.description | dump }}
+  tags:
+    - mcp
+    - typescript
+  annotations:
+    github.com/project-slug: ${{ values.destination.owner + "/" + values.destination.repo }}
+spec:
+  type: mcp-server
+  owner: ${{ values.owner | dump }}
+  lifecycle: experimental
